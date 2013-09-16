@@ -1,0 +1,9 @@
+{
+  "name": "australis-bugzilla-widget",
+  "fullName": "australis-bugzilla-widget",
+  "id": "jid1-Z6r2SFr66RSx4Q",
+  "description": "",
+  "author": "A Bugzilla dashboard widget for tracking a user's bugs.",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
