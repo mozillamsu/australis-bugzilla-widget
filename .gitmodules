@@ -1,0 +1,3 @@
+[submodule "lib/bz.js"]
+	path = lib/bz.js
+	url = https://github.com/harthur/bz.js.git
