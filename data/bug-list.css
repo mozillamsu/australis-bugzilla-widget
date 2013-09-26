@@ -1,0 +1,7 @@
+#user-name.success {
+    background-color: green;
+}
+
+#user-name.failure {
+    background-color: red;
+}
