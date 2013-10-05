@@ -43,7 +43,7 @@ BugList.prototype = {
             else {
                 // Add bugs to the list
                 bugs.forEach(function(bug) {
-                    self.bugs[ bug.id ] = bug;
+                    self.bugs[ bug.id ] = new Bug(bug);
                 });
 
                 // Update UI with the new bug list
@@ -56,7 +56,11 @@ BugList.prototype = {
      * Display the bugs in the UI.
      */
     draw: function () {
-        console.log(this.bugs);
+        // Draw Bug items
+        for (var bugId in this.bugs) {
+            var bug = this.bugs[bugId];
+            bug.draw();
+        }
     }
 
 }
