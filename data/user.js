@@ -6,6 +6,11 @@ var user = (function () {
     pub.formElement = document.getElementById("user-form");
 
     // Public Functions
+    /**
+     * Username submission event handler.
+     *
+     * Shuts down the form submission and checks whether the given user is valid.
+     */
     pub.onUserNameSubmit = function (event) {
         // Shut down the form submission
         event.preventDefault();
@@ -18,10 +23,16 @@ var user = (function () {
     };
 
     // Private functions
+    /**
+     * Gets the submitted user name from the form element.
+     */
     function getUserName () {
         return formNameElement.value;
     };
 
+    /**
+     * Sends a query to the server to see whether the user exists.
+     */
     function queryUserName (userName) {
         // Start a waiting animation
         startSpinner();
@@ -52,14 +63,23 @@ var user = (function () {
         });
     };
 
+    /**
+     * Starts the spinner animation.
+     */
     function startSpinner () {
         alert("Checking for user.");
     };
 
+    /**
+     * Stops the spinner animation.
+     */
     function stopSpinner () {
         alert("Done.");
     };
 
+    /**
+     * Sets the User's name to the submitted username.
+     */
     function setUserName (userName) {
         // Set form value
         formNameElement.value = userName;
@@ -69,6 +89,9 @@ var user = (function () {
         formNameElement.classList.add("success");
     };
 
+    /**
+     * Lets the user know that the given username is invalid.
+     */
     function rejectUserName () {
         // Turn red
         formNameElement.classList.remove("success");
