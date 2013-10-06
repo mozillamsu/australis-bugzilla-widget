@@ -13,6 +13,11 @@ var BugList = function (categoryName, queryParameters, filterFunction) {
     this.queryParameters = queryParameters;
     this.filterFunction = filterFunction;
 
+    // Elements
+    this.divElement = jQuery("#"+categoryName);
+    this.countElement = this.divElement.find(".category-count");
+    this.listElement = this.divElement.find(".bug-list");
+
     // Get some data!
     this.update();
 }
@@ -25,6 +30,7 @@ BugList.prototype = {
     update: function () {
         // Clear the bug list
         this.bugs = {};
+        this.length = 0;
 
         // Get new bugs and redraw
         this.queryBugs(this);
@@ -43,7 +49,8 @@ BugList.prototype = {
             else {
                 // Add bugs to the list
                 bugs.forEach(function(bug) {
-                    self.bugs[ bug.id ] = new Bug(bug);
+                    self.bugs[ bug.id ] = new Bug(bug, self.listElement);
+                    self.length = self.length + 1;
                 });
 
                 // Update UI with the new bug list
@@ -56,6 +63,12 @@ BugList.prototype = {
      * Display the bugs in the UI.
      */
     draw: function () {
+        // Write bug list count
+        this.countElement.html(this.length);
+
+        // Clear old bug HTML
+        this.listElement.empty();
+
         // Draw Bug items
         for (var bugId in this.bugs) {
             var bug = this.bugs[bugId];
