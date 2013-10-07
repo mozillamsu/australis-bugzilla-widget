@@ -1,12 +1,15 @@
 /**
  * Construct
  */
-var BugList = function (categoryName, queryParameters, filterFunction) {
+var BugList = function (manager, categoryName, queryParameters, filterFunction) {
     // Bugzilla API client
     this.client = bz.createClient({
         url: "https://api-dev.bugzilla.mozilla.org/latest",
         timeout: 30000
     });
+
+    // Bug Manager
+    this.manager = manager;
 
     // Bug list info
     this.categoryName = categoryName;
@@ -15,8 +18,13 @@ var BugList = function (categoryName, queryParameters, filterFunction) {
 
     // Elements
     this.divElement = jQuery("#"+categoryName);
+    this.categoryHead = this.divElement.find(".category-head");
     this.countElement = this.divElement.find(".category-count");
     this.listElement = this.divElement.find(".bug-list");
+
+    // Event handlers
+    this.categoryHead.click({self: this}, this.onClick);
+
 
     // Get some data!
     this.update();
@@ -74,6 +82,36 @@ BugList.prototype = {
             var bug = this.bugs[bugId];
             bug.draw();
         }
+    },
+
+    /**
+     * Open the category's bug list.
+     */
+    expand: function () {
+        this.listElement.show();
+    },
+
+    /**
+     * Close the category's bug list.
+     */
+    collapse: function () {
+        this.listElement.hide();
+    },
+
+    /**
+     * Handle a user clicking on this list.
+     */
+    onClick: function (params) {
+        // Get the BugList which fired this event
+        var self = params.data.self;
+
+        // Collapse other lists
+        for (var list in self.manager.bugLists) {
+            self.manager.bugLists[list].collapse();
+        }
+
+        // Expand this list
+        self.expand();
     }
 
 }

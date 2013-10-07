@@ -19,7 +19,6 @@ Bug.prototype = {
      * Display the bug in the UI.
      */
     draw: function () {
-        console.log(this);
         this.listElement.append('<li class="bug"> <a href="#"><span class="bug-number">'+this.id+'</span> - <span class="bug-name">'+this.summary+'</span></a> </li>');
     }
 }
