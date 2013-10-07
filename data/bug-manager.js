@@ -12,7 +12,7 @@ var bugManager = (function () {
             'type0-0-0': 'contains',
             'value0-0-0': this.username,
             status: ['NEW','UNCONFIRMED','REOPENED', 'ASSIGNED'],
-            include_fields: 'id,summary,status,resolution,last_change_time,attachments'
+            //include_fields: 'id,summary,status,resolution,last_change_time,attachments'
         }),
         toCheckIn: new BugList(pub, "to-check-in", {
             'field0-0-0': 'attachment.attacher',
@@ -25,7 +25,7 @@ var bugManager = (function () {
             'type0-2-0': 'substring',
             'value0-2-0': 'review+',
             status: ['NEW','UNCONFIRMED','REOPENED', 'ASSIGNED'],
-            include_fields: 'id,summary,status,resolution,last_change_time,attachments'
+            include_fields: 'id,summary,status,resolution,last_change_time,ref,attachments'
         }),
         toNag: new BugList(pub, "to-nag", {
             'field0-0-0': 'flag.setter',
@@ -38,13 +38,13 @@ var bugManager = (function () {
             'type0-1-0': 'contains',
             'value0-1-0': '?',
             status: ['NEW','UNCONFIRMED','REOPENED', 'ASSIGNED'],
-            include_fields: 'id,summary,status,resolution,last_change_time,flags,attachments'
+            include_fields: 'id,summary,status,resolution,last_change_time,ref,flags,attachments'
         }),
         toRespond: new BugList(pub, "to-respond", {
             'field0-0-0': 'flag.requestee',
             'type0-0-0': 'equals',
             'value0-0-0': this.username,
-            include_fields: 'id,summary,status,resolution,last_change_time,flags'
+            include_fields: 'id,summary,status,resolution,last_change_time,ref,flags'
         }),
         toFix: new BugList(pub, "to-fix", {
             email1: this.username,
@@ -55,7 +55,7 @@ var bugManager = (function () {
             'value0-1-0': 'fixed',
             order: "changeddate DESC",
             status: ['NEW','UNCONFIRMED','REOPENED', 'ASSIGNED'],
-            include_fields: 'id,summary,status,resolution,last_change_time,attachments,depends_on'
+            include_fields: 'id,summary,status,resolution,last_change_time,ref,attachments,depends_on'
         })
     };
 

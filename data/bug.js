@@ -4,6 +4,7 @@
 var Bug = function (data, listElement) {
     // Extract data
     this.id = data.id;
+    this.ref = data.ref;
     this.attachments = data.attachments;
     this.last_change_time = data.last_change_time;
     this.status = data.status;
@@ -19,7 +20,7 @@ Bug.prototype = {
      * Display the bug in the UI.
      */
     draw: function () {
-        this.listElement.append('<li class="bug"> <a href="#"><span class="bug-number">'+this.id+'</span> - <span class="bug-name">'+this.summary+'</span></a> </li>');
+        this.listElement.append('<li class="bug"> <a href="'+this.ref+'"><span class="bug-number">'+this.id+'</span> - <span class="bug-name">'+this.summary+'</span></a> </li>');
     }
 }
 
