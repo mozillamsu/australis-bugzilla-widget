@@ -24,10 +24,6 @@ var BugList = function (manager, categoryName, queryParameters, filterFunction) 
 
     // Event handlers
     this.categoryHead.click({self: this}, this.onClick);
-
-
-    // Get some data!
-    this.update();
 }
 
 BugList.prototype = {
