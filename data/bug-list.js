@@ -22,6 +22,9 @@ var BugList = function (manager, categoryName, queryParameters, filterFunction) 
     this.countElement = this.divElement.find(".category-count");
     this.listElement = this.divElement.find(".bug-list");
 
+    // Expand/ collapse state
+    this.isExpanded = false;
+
     // Event handlers
     this.categoryHead.click({self: this}, this.onClick);
 }
@@ -85,6 +88,7 @@ BugList.prototype = {
      */
     expand: function () {
         this.listElement.show();
+        this.isExpanded = true;
     },
 
     /**
@@ -92,6 +96,7 @@ BugList.prototype = {
      */
     collapse: function () {
         this.listElement.hide();
+        this.isExpanded = false;
     },
 
     /**
@@ -101,13 +106,23 @@ BugList.prototype = {
         // Get the BugList which fired this event
         var self = params.data.self;
 
-        // Collapse other lists
-        for (var list in self.manager.bugLists) {
-            self.manager.bugLists[list].collapse();
+        // Toggle expanded state
+        if (self.isExpanded) {
+            self.collapse();
         }
+        else {
+            // Collapse other lists
+            for (var i in self.manager.bugLists) {
+                var list = self.manager.bugLists[i];
 
-        // Expand this list
-        self.expand();
+                if (list.isExpanded) {
+                    list.collapse();
+                }
+            }
+
+            // Expand this list
+            self.expand();
+        }
     }
 
 }
