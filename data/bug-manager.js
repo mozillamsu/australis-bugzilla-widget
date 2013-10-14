@@ -74,7 +74,12 @@ BugManager.prototype = {
 
             // Update user name
             var params = bugList.queryParameters;
-            params['value0-0-0'] = this.user.name; // Set email1
+            if ('value0-0-0' in params) {
+                params['value0-0-0'] = this.user.name; // Set email1
+            }
+            if ('email1' in params) {
+                params['email1'] = this.user.name; // Set email1
+            }
             if ('value0-0-1' in params) {
                 params['value0-0-1'] = this.user.name; // Set email2
             }
