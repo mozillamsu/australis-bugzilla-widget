@@ -78,14 +78,14 @@ User.prototype = {
      * Starts the spinner animation.
      */
     startSpinner: function () {
-        alert("Checking for user.");
+        this.formNameElement.addClass("spinner");
     },
 
     /**
      * Stops the spinner animation.
      */
     stopSpinner: function () {
-        alert("Done.");
+        this.formNameElement.removeClass("spinner");
     },
 
     /**
