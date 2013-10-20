@@ -48,12 +48,6 @@ table {
 
 
 
-/* General */
-#content {
-
-}
-
-
 /* User Form */
 #user-form {
     background-color: #787878;
@@ -73,6 +67,10 @@ table {
 
 #user-name.failure {
     background-color: #FF5252;
+}
+
+#user-name.spinner {
+    background: white url('spinner.gif') no-repeat right center;
 }
 
 

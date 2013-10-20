@@ -27,7 +27,7 @@ Bug.prototype = {
 
         // <a> element
         var anchor = document.createElement('a');
-        anchor.href = this.ref;
+        anchor.href = 'https://bugzilla.mozilla.org/show_bug.cgi?id='+this.id;
 
         // Bug number <span> element
         var bugNumberSpan = document.createElement('span');
