@@ -48,12 +48,8 @@
     
 }
 
-ul.bug-list {
+.bug-list {
     background-color: #EDEDED;
+    display: none;
     list-style-type: none;
-}
-
-.bug-list a, .bug-list a:hover {
-    color: black;
-    text-decoration: none;
 }
