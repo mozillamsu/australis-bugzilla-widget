@@ -53,3 +53,12 @@
     display: none;
     list-style-type: none;
 }
+
+.bug-list description, .bug-list description:hover {
+    color: black;
+}
+
+.bug {
+
+}
+
