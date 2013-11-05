@@ -53,8 +53,9 @@
     list-style-type: none;
 }
 
+/* Bugs */
 .bug, bug:hover {
-    border-bottom: 1px solid #888;
+    border-bottom: 1px solid #787878;
     color: black;
 }
 
