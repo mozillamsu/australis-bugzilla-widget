@@ -58,6 +58,9 @@
 }
 
 .bug {
-
+    box-shadow: 0px 2px #888;
 }
 
+.bug:hover {
+    background-color: #EDEDED;
+}
