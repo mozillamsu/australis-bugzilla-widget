@@ -1,32 +1,32 @@
-<textbox id="user-name" placeholder="Todos For" />
+<textbox id="user-name" placeholder="Todos For" oncommand="return false" />
 <vbox id="bug-lists">
 
     <vbox id="to-review" class="bug-category">
-        <hbox class="category-head"><label class="category-count">0</label><label class="category-name">To Review</label></hbox>
+        <hbox class="category-head" oncommand="return false;"><label class="category-count">0</label><label class="category-name">To Review</label></hbox>
         <vbox class="bug-list">
         </vbox>
     </vbox>
 
     <vbox id="to-check-in" class="bug-category">
-        <hbox class="category-head"><label class="category-count">0</label><label class="category-name">To Check In</label></hbox>
+        <hbox class="category-head" oncommand="return false;"><label class="category-count">0</label><label class="category-name">To Check In</label></hbox>
         <vbox class="bug-list">
         </vbox>
     </vbox>
 
     <vbox id="to-nag" class="bug-category">
-        <hbox class="category-head"><label class="category-count">0</label><label class="category-name">To Nag</label></hbox>
+        <hbox class="category-head" oncommand="return false;"><label class="category-count">0</label><label class="category-name">To Nag</label></hbox>
         <vbox class="bug-list">
         </vbox>
     </vbox>
 
     <vbox id="to-respond" class="bug-category">
-        <hbox class="category-head"><label class="category-count">0</label><label class="category-name">To Respond</label></hbox>
+        <hbox class="category-head" oncommand="return false;"><label class="category-count">0</label><label class="category-name">To Respond</label></hbox>
         <vbox class="bug-list">
         </vbox>
     </vbox>
 
     <vbox id="to-fix" class="bug-category">
-        <hbox class="category-head"><label class="category-count">0</label><label class="category-name">To Fix</label></hbox>
+        <hbox class="category-head" oncommand="return false;"><label class="category-count">0</label><label class="category-name">To Fix</label></hbox>
         <vbox class="bug-list">
         </vbox>
     </vbox>
