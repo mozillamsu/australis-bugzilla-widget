@@ -1,4 +1,4 @@
-<hbox align="center" id="user-form"><label id="user-label">Todos For</label><textbox id="user-name" /></hbox>
+<textbox id="user-name" placeholder="Todos For" />
 <vbox id="bug-lists">
 
     <vbox id="to-review" class="bug-category">
