@@ -1,3 +1,6 @@
 [submodule "lib/bz.js"]
 	path = lib/bz.js
 	url = https://github.com/harthur/bz.js.git
+[submodule "lib/xul-manager"]
+	path = lib/xul-manager
+	url = https://github.com/slenkeri/xul-manager.git
