@@ -1,4 +1,4 @@
-<textbox id="user-name" placeholder="Todos For" oncommand="return false" />
+<textbox id="user-email" placeholder="Todos For" oncommand="return false" />
 <vbox id="bug-lists">
 
     <vbox id="to-review" class="bug-category">

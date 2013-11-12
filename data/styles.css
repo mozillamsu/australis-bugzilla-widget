@@ -7,22 +7,22 @@
     color: white;
 }
 
-#user-name {
+#user-email {
     -moz-appearance: none;
     background-color: white;
     width: 100%;
 }
 
-#user-name.success {
+#user-email.success {
     /*background-color: #70FF00;*/
     background-color: #C5EFBF;
 }
 
-#user-name.failure {
+#user-email.failure {
     background-color: #FFA07A;
 }
 
-#user-name.spinner {
+#user-email.spinner {
     background: white url('spinner.gif') no-repeat right center;
 }
 
