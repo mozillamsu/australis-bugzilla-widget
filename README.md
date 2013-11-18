@@ -9,8 +9,9 @@ The Australis Bugzilla Widget add-on provides a dashboard for a user's Bugzilla 
 4. Click "Install Add-on From File...".
 5. Select the add-on's XPI file from your downloads folder.
 
+
 ##Usage##
-Users may enter their Bugzilla user name in the username text box and press enter. The add-on will fetch all of the given user's bugs from the Bugzilla server. Bugs are automatically updated every 15 minutes. Bugs are divided into five categories:
+Users may enter their Bugzilla user name in the username text box and press enter. The add-on will fetch all of the given user's bugs from the Bugzilla server. Bugs are divided into five categories:
 
 * To Review: Bugs that have an attachment for which the user is flagged as a reviewer.
 * To Check In: Bugs for which the user has submitted a patch that has been reviewed and approved.
@@ -21,3 +22,9 @@ Users may enter their Bugzilla user name in the username text box and press ente
 Users see the number of bugs in each category to the left of the category's name. To show a category's bugs, users click on the category.
 
 Each bug displays the bug's ID and its summary. Bugs with a yellow background are new bugs which the user has not opened. Users may click on a bug to open its full report on the Bugzilla server.
+
+
+##Features##
+* Users are validated against the server. If a given user is not on the server, the text box turns red.
+* User information and last-update times are saved between sessions.
+* Bug lists automatically update every 15 minutes.
